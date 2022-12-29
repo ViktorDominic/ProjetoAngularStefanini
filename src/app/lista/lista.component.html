@@ -1,0 +1,14 @@
+<h1 class="text-center text-white my-4">{{ titulo }}</h1>
+<div class="container py-4 bg-white rounded">
+    <div class="row d-flex">
+        <div class="col-md-12">
+            <app-btn-incluir [estilo]="'btn btn-success pull-right mb-3'" [texto]="'Nova playlist'"
+                (novoDadosEvent)="novoDados($event)"></app-btn-incluir>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-4 mb-3 mb-sm-0" *ngFor="let dados of dado;let i = index">
+            <app-dados [dados]="dados" [indiceDados]="i" (notificaDadosExcluidoEvent)="removeDados($event)"></app-dados>
+        </div>
+
+    </div>
